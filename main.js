@@ -1,7 +1,9 @@
+//Do not worry about git history saying there was a previous commit 3 months ago. I'm retaking this class
+
 const defaultAttributeScores = [15,14,13,12,10,8];
 
 class Player {
-    constructor(characterName = 'NotNaruto') {
+    constructor(characterName = 'Sasuke') {
         this.name = characterName;
         this.attributes = {
             strength: 0,
@@ -19,7 +21,6 @@ class Player {
     }
     
     rollAttributes() {
-        console.log('Rolling dice...')
         for (const key in this.attributes) {
             let results = diceRoller(4,6);
             results.sort(function(a,b){return a - b});
@@ -64,11 +65,6 @@ function diceRoller(times, sides) {
 }
 
 function sumArrayElements(array) {
-    let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-        sum += array[i];
-    }
-
-    return sum;
+    return array.reduce((total, currentNumber) => total + currentNumber)
 }
 
